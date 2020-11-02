@@ -15,35 +15,37 @@ def analyser(filepath): #BACKEND
                    'checkin_id', 'bid', 'brewery_id', 'photo_url', 'tagged_friends',
                    'total_toasts', 'total_comments']
 
+    interesting_fields = ['brewery_name']
+
     beers = pd.read_csv(filepath) # read in raw csv
     beers.drop(columns=useless_columns, inplace=True) # delete useless columns from dataframe
 
-    # filter for the columns you want. TODO create loop to get more stats
-    beers = beers.filter(['brewery_name', 'rating_score'], axis=1)
+    for field in interesting_fields: 
+        beers = beers.filter([field, 'rating_score'], axis=1)
 
-    beers=beers.dropna() #remove NaN values
+        beers=beers.dropna() #remove NaN values
 
-    #obtain the number of entries for each unique column entry
-    brewery_counts = beers.groupby(['brewery_name'])[['rating_score']].count() 
+        #obtain the number of entries for each unique column entry
+        brewery_counts = beers.groupby([field])[['rating_score']].count() 
                                                                                                                               
-    brewery_counts.sort_values(by='rating_score', ascending=True, inplace=True) #sort into ascending
+        brewery_counts.sort_values(by='rating_score', ascending=True, inplace=True) #sort into ascending
 
-    #TODO: GUI for user to decide their top however many entries by beer count. Number in line below
-    #will be user input
-    remove_list = list(brewery_counts.index[:-40]) # make a list of the groups with counts too low to include
+        #TODO: GUI for user to decide their top however many entries by beer count. Number in line below
+        #will be user input
+        remove_list = list(brewery_counts.index[:-40]) # make a list of the groups with counts too low to include
 
-    brewery_means = beers.groupby(['brewery_name'])[['rating_score']].mean() # obtain means for each group
-    brewery_means.drop(remove_list, inplace=True) # remove the groups with counts which are too low
-    brewery_means.sort_values(by='rating_score', ascending=True, inplace=True) # ascending order of mean rating
+        brewery_means = beers.groupby([field])[['rating_score']].mean() # obtain means for each group
+        brewery_means.drop(remove_list, inplace=True) # remove the groups with counts which are too low
+        brewery_means.sort_values(by='rating_score', ascending=True, inplace=True) # ascending order of mean rating
    
-    #consider removing median fucntionality below
-    brewery_medians = beers.groupby(['brewery_name'])[['rating_score']].median() # obtain medians for each group
-    brewery_medians.drop(remove_list, inplace=True) # remove the groups with counts which are too low
-    brewery_medians.sort_values(by='rating_score', ascending=True, inplace=True) # ascending order of median rating
+        #consider removing median fucntionality below
+        brewery_medians = beers.groupby([field])[['rating_score']].median() # obtain medians for each group
+        brewery_medians.drop(remove_list, inplace=True) # remove the groups with counts which are too low
+        brewery_medians.sort_values(by='rating_score', ascending=True, inplace=True) # ascending order of median rating
     
-    output_plotter(brewery_means, brewery_medians)
+        output_plotter(brewery_means, brewery_medians)
     
-    
+    plt.show()
     
     #Optional TODO: showing user the beer counts
     #brewery_counts.drop(remove_list, inplace=True) # remove the groups with counts which are too low
@@ -57,7 +59,6 @@ def output_plotter(means, medians):
     medians.plot(kind='barh', title='Median Ratings by Brewery', legend=False)
     plt.xlabel('Median Rating out of 5')
     
-    plt.show()
 
 
 def open_file(): #GUI
