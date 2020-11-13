@@ -2,4 +2,4 @@ This is very much a work-in-progress, combining my love of craft beer with my lo
 
 Read more about Untappd here https://untappd.com/home
 
-<img src="https://github.com/LucasSD/Untappd-Stats/blob/master/Beer%20Analyser%20Gif.gif" width="700px">
+<img align="right" width="1000" height="300" src="https://github.com/LucasSD/Untappd-Stats/blob/master/Beer%20Analyser%20Gif.gif">
