@@ -15,10 +15,11 @@ def analyser(filepath): #BACKEND
                    'checkin_id', 'bid', 'brewery_id', 'photo_url', 'tagged_friends',
                    'total_toasts', 'total_comments']
 
-    interesting_fields = ['brewery_name']
+    #KeyError Groupby when I loop, even though they work individually
+    interesting_fields = ['brewery_country']
 
     beers = pd.read_csv(filepath) # read in raw csv
-    beers.drop(columns=useless_columns, inplace=True) # delete useless columns from dataframe
+    #beers.drop(columns=useless_columns, inplace=True) # delete useless columns from dataframe
 
     for field in interesting_fields: 
         beers = beers.filter([field, 'rating_score'], axis=1)
@@ -32,7 +33,7 @@ def analyser(filepath): #BACKEND
 
         #TODO: GUI for user to decide their top however many entries by beer count. Number in line below
         #will be user input
-        remove_list = list(brewery_counts.index[:-40]) # make a list of the groups with counts too low to include
+        remove_list = list(brewery_counts.index[:-20]) # make a list of the groups with counts too low to include
 
         brewery_means = beers.groupby([field])[['rating_score']].mean() # obtain means for each group
         brewery_means.drop(remove_list, inplace=True) # remove the groups with counts which are too low
@@ -53,11 +54,13 @@ def analyser(filepath): #BACKEND
     #record of the counts, for reference
 
 def output_plotter(means, medians):
-    means.plot(kind='barh', title='Mean Ratings by Brewery', legend=False) # create horizontal bar charts
+    means.plot(kind='barh', title='Mean Ratings by Brewery Country', legend=False, figsize=(15,6)) # create horizontal bar charts
     plt.xlabel('Mean Rating out of 5')
+    plt.ylabel('Country')
 
-    medians.plot(kind='barh', title='Median Ratings by Brewery', legend=False)
+    medians.plot(kind='barh', title='Median Ratings by Brewery Country', legend=False, figsize=(15,6))
     plt.xlabel('Median Rating out of 5')
+    plt.ylabel('Country')
     
 
 
