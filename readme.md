@@ -6,4 +6,3 @@ This is very much a work-in-progress, combining my love of craft beer with my lo
 
 Read more about Untappd here https://untappd.com/home
 
-
