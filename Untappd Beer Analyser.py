@@ -15,14 +15,13 @@ def analyser(filepath): #BACKEND
                    'checkin_id', 'bid', 'brewery_id', 'photo_url', 'tagged_friends',
                    'total_toasts', 'total_comments']
 
-    #KeyError Groupby when I loop, even though they work individually
-    interesting_fields = ['brewery_country']
+    interesting_fields = ['brewery_country', 'brewery_name', 'beer_type', 'venue_name', 'venue_city', 'venue_country', 'brewery_city', 'purchase_venue', 'serving_type']
 
-    beers = pd.read_csv(filepath) # read in raw csv
-    #beers.drop(columns=useless_columns, inplace=True) # delete useless columns from dataframe
+    raw_beers = pd.read_csv(filepath) # read in raw csv
 
     for field in interesting_fields: 
-        beers = beers.filter([field, 'rating_score'], axis=1)
+        
+        beers = raw_beers.filter([field, 'rating_score'], axis=1)
 
         beers=beers.dropna() #remove NaN values
 
@@ -54,11 +53,11 @@ def analyser(filepath): #BACKEND
     #record of the counts, for reference
 
 def output_plotter(means, medians):
-    means.plot(kind='barh', title='Mean Ratings by Brewery Country', legend=False, figsize=(15,6)) # create horizontal bar charts
+    means.plot(kind='barh', title='Mean Ratings by Beer Style', legend=False, figsize=(10,6)) # create horizontal bar charts
     plt.xlabel('Mean Rating out of 5')
     plt.ylabel('Country')
 
-    medians.plot(kind='barh', title='Median Ratings by Brewery Country', legend=False, figsize=(15,6))
+    medians.plot(kind='barh', title='Median Ratings by Beer Style', legend=False, figsize=(10,6))
     plt.xlabel('Median Rating out of 5')
     plt.ylabel('Country')
     
