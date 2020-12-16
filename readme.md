@@ -6,7 +6,7 @@ My aim is to continue to improve and add to this project, which combines my love
 
 Read more about Untappd here https://untappd.com/home
 
-To install using windows:
+To install using Windows:
 
 1 - download this repo as a zip file and unzip it to your working directory.  
 2 - install Python 3.9 to your working directory  
@@ -15,7 +15,17 @@ To install using windows:
 5 - install numpy by typing ```$ py -m pip install numpy==1.19.3``` into the cmd terminal. Version 1.19.4 produces a RunTime error in Windows at the time of writing (16/12/2020).  
 6 - install pandas by typing ```$ py -m pip install pandas``` into the cmd terminal.  
 7 - install matplotlib by typing ```$ py -m pip install matplotlib``` into the cmd terminal.  
-8 - run by typing ```$ py -m Untappd_Beer_Analyser``` into the cmd teminal. Alternatively, type ```$ exec(open('Untappd_Beer_Analyser.py').read())``` into an interactive session.   
+8 - run by typing ```$ py -m Untappd_Beer_Analyser``` into the cmd teminal. Alternatively, type ```$ exec(open('Untappd_Beer_Analyser.py').read())``` into an interactive session.  
+
+To install using UNIX:  
+
+1 - download this repo as a zip file and unzip it to your working directory.  
+2 - install Python 3.9 to your working directory  
+3 - go to the Terminal for the steps below  
+4 - if you would like to create a virtual environment at any stage, type ```$ python virtual env```, where env is the name of your virtual environment  
+5 - installing packages TBC...  
+
+8 - run by typing python ```Untappd_Beer_Analyser.py``` into the UNIX terminal.  
 
 To use:   
   
