@@ -1,12 +1,11 @@
-Quick Demo
+![](https://github.com/LucasSD/Untappd-Stats/blob/LucasSD-patch-1/Untappd_Cover.jpg)
+# Introduction
 
-![](https://github.com/LucasSD/Untappd-Stats/blob/master/Beer%20Analyser%20Gif.gif)
-
-My aim is to continue to improve and add to this project, which combines my love of craft beer with my love of programming! I'm putting this into a GitHub repository so that I can learn about work flow and version control. The current code works and produces a number of horizontal bar charts (see PNG images in repository). They provide statistics which are not available directly via the app (even if you pay the subscription) and would take a lot of time to obtain using a basic spreadsheet. I am focussing on statistics such as mean beer rating by beer style, country, brewery, and so on. My code only includes entries with the highest frequencies, to ensure that a beer with one high rating cannot elevate a brewery to the top of the graph, for example. 
+This project combines my love of craft beer with my love of programming! The current code produces a number of horizontal bar charts (see PNG images in repository). They provide statistics which are not available directly via the app (even if you pay the subscription) and would take a lot of time to obtain using a basic spreadsheet. I am focussing on statistics such as mean beer rating by beer style, country, brewery, and so on. My code only includes entries with the highest frequencies, to ensure that a beer with one high rating cannot elevate a brewery to the top of the graph, for example. 
 
 Read more about Untappd here https://untappd.com/home
 
-To install using Windows:
+## To install using Windows:
 
 1 - download this repo as a zip file and unzip it to your working directory.  
 2 - install Python 3.9 to your working directory  
@@ -15,9 +14,9 @@ To install using Windows:
 5 - install numpy by typing ```py -m pip install numpy==1.19.3``` into the cmd terminal. Version 1.19.4 produces a RunTime error in Windows at the time of writing (16/12/2020). 
 6 - install pandas by typing ```py -m pip install pandas``` into the cmd terminal.  
 7 - install matplotlib by typing ```py -m pip install matplotlib``` into the cmd terminal.  
-8 - run by typing ```py -m Untappd_Beer_Analyser``` into the cmd teminal. Alternatively, type ```exec(open('Untappd_Beer_Analyser.py').read())``` into an interactive session.  
+8 - run by typing ```py -m Untappd_Beer_Analyser``` into the cmd terminal. Alternatively, type ```exec(open('Untappd_Beer_Analyser.py').read())``` into an interactive session.  
 
-To install using UNIX:  
+## To install using UNIX:  
 
 1 - download this repo as a zip file and unzip it to your working directory.  
 2 - install Python 3.9 to your working directory  
@@ -30,8 +29,32 @@ To install using UNIX:
 9 - install matplotlib by typing ```pip install matplotlib``` into the UNIX terminal.  
 10 - run by typing ```python Untappd_Beer_Analyser.py``` into the UNIX terminal.  
 
-To use:   
+## To use:   
   
-Click on open and select the file called "Untappd beers.csv". Browse the bar charts. 
+Click on open and select the file called "Untappd beers.csv". Browse the bar charts. If you are an Untappd user and have your own csv file from Untappd, use that to check out your own stats!
+
+## Quick Demo
+
+![](https://github.com/LucasSD/Untappd-Stats/blob/master/Beer%20Analyser%20Gif.gif)
+
+## Technologies
+
+Python 3.9, NumPy 1.19.3, Pandas 1.1.3, Matplotlib 3.3.2
+
+## Known Issues
+
+There are some font issues with y-axis labels and the graph titles need improving. All charts should appear in one window. 
+
+## Project Status
+
+Still being developed. 
+###### To do:
+- fix known issues
+- add other stats such as mean alcohol content, worst rated beers/breweries/cities..., correlations between alcohol content and rating, and so on
+- output as a pretty pdf
+- create an executable file
+- run the project on the web
+
+
 
 
