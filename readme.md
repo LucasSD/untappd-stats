@@ -1,12 +1,11 @@
-Quick Demo
 
-![](https://github.com/LucasSD/Untappd-Stats/blob/master/Beer%20Analyser%20Gif.gif)
+# Introduction
 
-My aim is to continue to improve and add to this project, which combines my love of craft beer with my love of programming! I'm putting this into a GitHub repository so that I can learn about work flow and version control. The current code works and produces a number of horizontal bar charts (see PNG images in repository). They provide statistics which are not available directly via the app (even if you pay the subscription) and would take a lot of time to obtain using a basic spreadsheet. I am focussing on statistics such as mean beer rating by beer style, country, brewery, and so on. My code only includes entries with the highest frequencies, to ensure that a beer with one high rating cannot elevate a brewery to the top of the graph, for example. 
+This project combines my love of craft beer with my love of programming! The current code works and produces a number of horizontal bar charts (see PNG images in repository). They provide statistics which are not available directly via the app (even if you pay the subscription) and would take a lot of time to obtain using a basic spreadsheet. I am focussing on statistics such as mean beer rating by beer style, country, brewery, and so on. My code only includes entries with the highest frequencies, to ensure that a beer with one high rating cannot elevate a brewery to the top of the graph, for example. 
 
 Read more about Untappd here https://untappd.com/home
 
-To install using Windows:
+## To install using Windows:
 
 1 - download this repo as a zip file and unzip it to your working directory.  
 2 - install Python 3.9 to your working directory  
@@ -17,7 +16,7 @@ To install using Windows:
 7 - install matplotlib by typing ```py -m pip install matplotlib``` into the cmd terminal.  
 8 - run by typing ```py -m Untappd_Beer_Analyser``` into the cmd teminal. Alternatively, type ```exec(open('Untappd_Beer_Analyser.py').read())``` into an interactive session.  
 
-To install using UNIX:  
+### To install using UNIX:  
 
 1 - download this repo as a zip file and unzip it to your working directory.  
 2 - install Python 3.9 to your working directory  
@@ -30,8 +29,12 @@ To install using UNIX:
 9 - install matplotlib by typing ```pip install matplotlib``` into the UNIX terminal.  
 10 - run by typing ```python Untappd_Beer_Analyser.py``` into the UNIX terminal.  
 
-To use:   
+#### To use:   
   
 Click on open and select the file called "Untappd beers.csv". Browse the bar charts. 
+
+##### Quick Demo
+
+![](https://github.com/LucasSD/Untappd-Stats/blob/master/Beer%20Analyser%20Gif.gif)
 
 
