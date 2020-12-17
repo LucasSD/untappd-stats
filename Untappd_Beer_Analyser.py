@@ -17,6 +17,8 @@ def analyser(filepath): #BACKEND
 
     interesting_fields = ['brewery_country', 'brewery_name', 'beer_type', 'venue_name', 'venue_city', 'venue_country', 'brewery_city', 'purchase_venue', 'serving_type']
 
+    titles = [field.upper().replace('_', ' ') for field in interesting_fields] # graph titles
+
     raw_beers = pd.read_csv(filepath) # read in raw csv
 
     for field in interesting_fields: 
@@ -43,7 +45,7 @@ def analyser(filepath): #BACKEND
         brewery_medians.drop(remove_list, inplace=True) # remove the groups with counts which are too low
         brewery_medians.sort_values(by='rating_score', ascending=True, inplace=True) # ascending order of median rating
     
-        output_plotter(brewery_means, brewery_medians)
+        output_plotter(brewery_means, brewery_medians, field)
     
     plt.show()
     
@@ -52,16 +54,15 @@ def analyser(filepath): #BACKEND
     #brewery_counts.to_csv(r'C:\Users\thels\Desktop\New Folder\Beer Stats\Brewery Counts.csv') # write a csv as a
     #record of the counts, for reference
 
-def output_plotter(means, medians):
-    means.plot(kind='barh', title='Mean Ratings by Beer Style', legend=False, figsize=(10,6)) # create horizontal bar charts
+def output_plotter(means, medians, field):
+
+    means.plot(kind='barh', title=f'Mean Ratings by {field}', legend=False, figsize=(10,6)) # create horizontal bar charts
     plt.xlabel('Mean Rating out of 5')
     plt.ylabel('Country')
 
-    medians.plot(kind='barh', title='Median Ratings by Beer Style', legend=False, figsize=(10,6))
+    medians.plot(kind='barh', title=f'Median Ratings by {field}', legend=False, figsize=(10,6))
     plt.xlabel('Median Rating out of 5')
     plt.ylabel('Country')
-    
-
 
 def open_file(): #GUI
     #Open a CSV file
