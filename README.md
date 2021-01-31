@@ -31,9 +31,9 @@ Read more about Untappd here https://untappd.com/home
 
 ## To use:   
   
-Click on open and select the file called "Untappd beers.csv". Browse the bar charts. If you are an Untappd user and have your own csv file from Untappd, use that to check out your own stats!
+Click on open and select the file called "Untappd beers.csv". A pdf document of multiple bar charts will appear in the same directory as your csv file. If you are an Untappd user and have your own csv file from Untappd, use that to check out your own stats!
 
-## Quick Demo
+## Quick Demo (to be updated)
 
 ![](https://github.com/LucasSD/Untappd-Stats/blob/master/Beer%20Analyser%20Gif.gif)
 
@@ -43,15 +43,14 @@ Python 3.9, NumPy 1.19.3, Pandas 1.1.3, Matplotlib 3.3.2
 
 ## Known Issues
 
-There are some font issues with y-axis labels and the graph titles need improving. All charts should appear in one window. 
+There are some font issues with y-axis labels.
 
 ## Project Status
 
 Still being developed. 
 ###### To do:
-- fix known issues
+- fix known y-axis label issue
 - add other stats such as mean alcohol content, worst rated beers/breweries/cities..., correlations between alcohol content and rating, and so on
-- output as a pretty pdf
 - create an executable file
 - run the project on the web
 
