@@ -2,26 +2,26 @@
 #Untappd Beer Analyser 
 # Read in csv file from Untappd and output statistics 
 
+import re, os
 import tkinter as tk
 from tkinter.filedialog import askopenfilename
 
 import matplotlib.pyplot as plt
+from matplotlib.backends.backend_pdf import PdfPages
 import pandas as pd
 
 def analyser(filepath): #BACKEND
-    #columns below to delete from raw csv file
-    useless_columns = ['beer_name', 'comment', 'venue_lat', 'venue_lng', 'created_at',
-                   'checkin_url', 'beer_url', 'brewery_url', 'flavor_profiles', 'purchase_venue',
-                   'checkin_id', 'bid', 'brewery_id', 'photo_url', 'tagged_friends',
-                   'total_toasts', 'total_comments']
+    pp = PdfPages(os.path.dirname(filepath) + '/Your_Beer_Statistics.pdf')
 
     interesting_fields = ['brewery_country', 'brewery_name', 'beer_type', 'venue_name', 'venue_city', 'venue_country', 'brewery_city', 'purchase_venue', 'serving_type']
-
-    titles = [field.upper().replace('_', ' ') for field in interesting_fields] # graph titles
-
+    titles = []
     raw_beers = pd.read_csv(filepath) # read in raw csv
-
-    for field in interesting_fields: 
+    
+    for i, field in enumerate(interesting_fields): 
+        title = field.capitalize().replace('_', ' ')
+        mo = re.search(' .', title)
+        title = re.sub(' .', mo.group().upper(), title)
+        titles.append(title)
         
         beers = raw_beers.filter([field, 'rating_score'], axis=1)
 
@@ -32,37 +32,36 @@ def analyser(filepath): #BACKEND
                                                                                                                               
         brewery_counts.sort_values(by='rating_score', ascending=True, inplace=True) #sort into ascending
 
-        #TODO: GUI for user to decide their top however many entries by beer count. Number in line below
-        #will be user input
         remove_list = list(brewery_counts.index[:-20]) # make a list of the groups with counts too low to include
 
         brewery_means = beers.groupby([field])[['rating_score']].mean() # obtain means for each group
         brewery_means.drop(remove_list, inplace=True) # remove the groups with counts which are too low
         brewery_means.sort_values(by='rating_score', ascending=True, inplace=True) # ascending order of mean rating
-   
+    
+
         #consider removing median fucntionality below
         brewery_medians = beers.groupby([field])[['rating_score']].median() # obtain medians for each group
         brewery_medians.drop(remove_list, inplace=True) # remove the groups with counts which are too low
         brewery_medians.sort_values(by='rating_score', ascending=True, inplace=True) # ascending order of median rating
+        
+        output_plotter(brewery_means, brewery_medians, titles[i], pp)
     
-        output_plotter(brewery_means, brewery_medians, field)
-    
-    plt.show()
-    
-    #Optional TODO: showing user the beer counts
-    #brewery_counts.drop(remove_list, inplace=True) # remove the groups with counts which are too low
+    pp.close()
+    window.destroy()
     #brewery_counts.to_csv(r'C:\Users\thels\Desktop\New Folder\Beer Stats\Brewery Counts.csv') # write a csv as a
     #record of the counts, for reference
 
-def output_plotter(means, medians, field):
+def output_plotter(means, medians, title, pp):
 
-    means.plot(kind='barh', title=f'Mean Ratings by {field}', legend=False, figsize=(10,6)) # create horizontal bar charts
+    means.plot(kind='barh', title=f'Mean Ratings by {title}', legend=False, figsize=(10,6)) # create horizontal bar charts
     plt.xlabel('Mean Rating out of 5')
     plt.ylabel('Country')
+    pp.savefig()
 
-    medians.plot(kind='barh', title=f'Median Ratings by {field}', legend=False, figsize=(10,6))
+    medians.plot(kind='barh', title=f'Median Ratings by {title}', legend=False, figsize=(10,6))
     plt.xlabel('Median Rating out of 5')
     plt.ylabel('Country')
+    pp.savefig()
 
 def open_file(): #GUI
     #Open a CSV file
@@ -70,7 +69,6 @@ def open_file(): #GUI
     filepath = askopenfilename(filetypes=[("csv Files", "*.csv")])
     if not filepath: return
     analyser(filepath)
-    #window.destroy()
 
 #GUI
 window = tk.Tk()
@@ -95,3 +93,4 @@ open_btn = tk.Button(yellow_frm, text='Open', command=open_file)
 open_btn.grid(row=1, column=3, sticky='ew')
 
 window.mainloop()
+
