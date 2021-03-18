@@ -51,8 +51,7 @@ Still being developed.
 ###### To do:
 - fix known y-axis label issue
 - add other stats such as mean alcohol content, worst rated beers/breweries/cities..., correlations between alcohol content and rating, and so on
-- create an executable file
-- run the project on the web
+- deploy the project to the web
 
 
 
