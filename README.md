@@ -43,7 +43,7 @@ Python 3.9, NumPy 1.19.3, Pandas 1.1.3, Matplotlib 3.3.2
 
 ## Known Issues
 
-There are some font issues with y-axis labels.
+There are some font and clipping issues with y-axis labels.
 
 ## Project Status
 
