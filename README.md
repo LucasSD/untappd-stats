@@ -35,7 +35,7 @@ Click on open and select the file called "Untappd beers.csv". A pdf document of 
 
 ## Quick Demo (to be updated)
 
-![](https://github.com/LucasSD/Untappd-Stats/blob/master/Beer%20Analyser%20Gif.gif)
+![](Beer_Analyser.gif)
 
 ## Technologies
 
