@@ -50,6 +50,7 @@ There are some font and clipping issues with y-axis labels.
 Still being developed. 
 ###### To do:
 - fix known y-axis label issue
+- rewrite in modules
 - add other stats such as mean alcohol content, worst rated beers/breweries/cities..., correlations between alcohol content and rating, and so on
 - deploy the project to the web
 
