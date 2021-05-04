@@ -1,7 +1,7 @@
 ![](https://github.com/LucasSD/Untappd-Stats/blob/master/Untappd_Cover.jpg)
 # Introduction
 
-This project combines my love of craft beer with my love of programming! The current code produces a number of horizontal bar charts (see PDF document in the "User Output Examples" directory). They provide statistics which are not available directly via the app (even if you pay the subscription) and would take a lot of time to obtain using a basic spreadsheet. I am focussing on statistics such as mean beer rating by beer style, country, brewery, and so on. My code only includes entries with the highest frequencies, to ensure that a beer with one high rating cannot elevate a brewery to the top of the graph, for example. 
+This project combines my love of craft beer with my love of programming! The current code produces a number of horizontal bar charts (see PDF document in the "user_output" directory). They provide statistics which are not available directly via the app (even if you pay the subscription) and would take a lot of time to obtain using a basic spreadsheet. I am focussing on statistics such as mean beer rating by beer style, country, brewery, and so on. My code only includes entries with the highest frequencies, to ensure that a beer with one high rating cannot elevate a brewery to the top of the graph, for example. 
 
 Read more about Untappd here https://untappd.com/home
 
@@ -14,7 +14,7 @@ Read more about Untappd here https://untappd.com/home
 5 - install numpy by typing ```py -m pip install numpy==1.19.3``` into the cmd terminal. Version 1.19.4 produces a RunTime error in Windows at the time of writing (16/12/2020). 
 6 - install pandas by typing ```py -m pip install pandas``` into the cmd terminal.  
 7 - install matplotlib by typing ```py -m pip install matplotlib``` into the cmd terminal.  
-8 - run by typing ```py -m Untappd_Beer_Analyser``` into the cmd terminal. Alternatively, type ```exec(open('Untappd_Beer_Analyser.py').read())``` into an interactive session.  
+8 - run by typing ```py -m beer_analyser``` into the cmd terminal. Alternatively, type ```exec(open('beer_analyser.py').read())``` into an interactive session.  
 
 ## To install using UNIX:  
 
@@ -27,11 +27,11 @@ Read more about Untappd here https://untappd.com/home
 7 - install numpy by typing ```pip install numpy``` into the UNIX terminal.  
 8 - install pandas by typing ```pip install pandas``` into the UNIX terminal.  
 9 - install matplotlib by typing ```pip install matplotlib``` into the UNIX terminal.  
-10 - run by typing ```python Untappd_Beer_Analyser.py``` into the UNIX terminal.  
+10 - run by typing ```python beer_analyser.py``` into the UNIX terminal.  
 
 ## To use:   
   
-Click on open and select the file called "Untappd beers.csv". A pdf document of multiple bar charts will appear in the same directory as your csv file. If you are an Untappd user and have your own csv file from Untappd, use that to check out your own stats!
+Click on open and select the file called "untappd_beers_raw.csv". A pdf document of multiple bar charts will appear in the same directory as your CSV file. If you are an Untappd user and have your own CSV file from Untappd, use that to check out your own stats!
 
 ## Quick Demo (to be updated)
 
