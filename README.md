@@ -1,4 +1,4 @@
-![](https://github.com/LucasSD/Untappd-Stats/blob/master/Untappd_Cover.jpg)
+![](https://github.com/LucasSD/Untappd-Stats/blob/master/beer_cover.jpg)
 # Introduction
 
 This project combines my love of craft beer with my love of programming! The current code produces a number of horizontal bar charts (see PDF document in the "user_output" directory). They provide statistics which are not available directly via the app (even if you pay the subscription) and would take a lot of time to obtain using a basic spreadsheet. I am focussing on statistics such as mean beer rating by beer style, country, brewery, and so on. My code only includes entries with the highest frequencies, to ensure that a beer with one high rating cannot elevate a brewery to the top of the graph, for example. 
@@ -35,7 +35,7 @@ Click on open and select the file called "untappd_beers_raw.csv". A pdf document
 
 ## Quick Demo (to be updated)
 
-![](Beer_Analyser.gif)
+![](demo.gif)
 
 ## Technologies
 
