@@ -39,7 +39,7 @@ Click on open and select the file called "untappd_beers_raw.csv". A pdf document
 
 ## Technologies
 
-Python 3.9, NumPy 1.19.3, Pandas 1.1.3, Matplotlib 3.3.2
+Python 3.9, NumPy 1.19.3, Pandas 1.1.3, Matplotlib 3.3.2, Black
 
 ## Known Issues
 
