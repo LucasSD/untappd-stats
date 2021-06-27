@@ -5,33 +5,30 @@ This project combines my love of craft beer with my love of programming! The cur
 
 Read more about Untappd here https://untappd.com/home
 
-## To install using Windows:
+## To run using Windows:
 
 1 - download this repo as a zip file and unzip it to your working directory.  
-2 - install Python 3.9 to your working directory  
-3 - open Windows command prompt for the steps below  
+2 - install Python 3.9.5 to your working directory  
+3 - open Windows command prompt for the steps below and change directory as needed  
 4 - if you would like to create a virtual environment at any stage, type ```py -m venv env```, where ```env``` is the name of your virtual environment. Activate the virtual environment by typing ```env\Scripts\activate.bat```.    
-5 - install numpy by typing ```py -m pip install numpy==1.19.3``` into the cmd terminal. Version 1.19.4 produces a RunTime error in Windows at the time of writing (16/12/2020). 
-6 - install pandas by typing ```py -m pip install pandas``` into the cmd terminal.  
-7 - install matplotlib by typing ```py -m pip install matplotlib``` into the cmd terminal.  
-8 - run by typing ```py -m beer_analyser``` into the cmd terminal. Alternatively, type ```exec(open('beer_analyser.py').read())``` into an interactive session.  
+5 - install dependencies by typing ```py -m pip install -r requirements.txt``` into the cmd terminal.  
+6 - run by typing ```py -m beer_analyser``` into the cmd terminal. Alternatively, type ```exec(open('beer_analyser.py').read())``` into an interactive session.  
 
-## To install using UNIX:  
+## To run using UNIX:  
 
 1 - download this repo as a zip file and unzip it to your working directory.  
-2 - install Python 3.9 to your working directory  
-3 - go to the Terminal for the steps below  
+2 - install Python 3.9.5 to your working directory  
+3 - go to the Terminal for the steps below and change directory as needed  
 4 - if you would like to create a virtual environment at any stage, type ```python venv env```, where ```env``` is the name of your virtual environment. Activate the virtual environment by typing ```source env/bin/activate```   
 5 - If you’re on Linux and installed Python using your OS package manager, you may have to install pip separately for the steps below; see https://packaging.python.org/guides/installing-using-linux-tools/    
-6 - Due to the way most Linux distributions are handling the Python 3 migration, Linux users using Python without creating a virtual environment first should replace the ```python``` commands below with ```python3``` and the ```pip``` commands below with ```pip3 --user```.    
-7 - install numpy by typing ```pip install numpy``` into the UNIX terminal.  
-8 - install pandas by typing ```pip install pandas``` into the UNIX terminal.  
-9 - install matplotlib by typing ```pip install matplotlib``` into the UNIX terminal.  
-10 - run by typing ```python beer_analyser.py``` into the UNIX terminal.  
+6 - Due to the way most Linux distributions are handling the Python 3 migration, Linux users using Python without creating a virtual environment first should replace the ```python``` commands below with ```python3``` and the ```pip``` commands below with ```pip3 --user```.   
+7 - install dependencies by typing ```pip install -r requirements.txt```.
+
+8 - run by typing ```python beer_analyser.py``` into the UNIX terminal.  
 
 ## To use:   
   
-Click on open and select the file called "untappd_beers_raw.csv". A pdf document of multiple bar charts will appear in the same directory as your CSV file. If you are an Untappd user and have your own CSV file from Untappd, use that to check out your own stats!
+Click on open and select the file called "untappd_beers_raw.csv". A PDF document of multiple bar charts will appear in the same directory as your CSV file. If you are an Untappd user and have your own CSV file from Untappd, use that to check out your own stats!
 
 ## Quick Demo (to be updated)
 
@@ -39,7 +36,7 @@ Click on open and select the file called "untappd_beers_raw.csv". A pdf document
 
 ## Technologies
 
-Python 3.9, NumPy 1.19.3, Pandas 1.1.3, Matplotlib 3.3.2, Black
+Python 3.9.5, NumPy 1.19.3, Pandas 1.2.5, Matplotlib 3.4.2
 
 ## Known Issues
 
@@ -52,7 +49,7 @@ Still being developed.
 - fix known y-axis label issue
 - rewrite in modules
 - add other stats such as mean alcohol content, worst rated beers/breweries/cities..., correlations between alcohol content and rating, and so on
-- deploy the project to the web
+- deploy the application online
 
 
 
