@@ -44,7 +44,7 @@ There are some font and clipping issues with y-axis labels.
 
 ## Project Status
 
-Still being developed. 
+On hold. 
 ###### To do:
 - fix known y-axis label issue
 - rewrite in modules
